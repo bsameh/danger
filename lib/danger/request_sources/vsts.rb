@@ -53,6 +53,7 @@ module Danger
       end
 
       def setup_danger_branches
+        print self.pr_json
         base_branch = self.pr_json[:targetRefName].sub("refs/heads/", "")
         base_commit = self.pr_json[:lastMergeTargetCommit][:commitId]
         head_branch = self.pr_json[:sourceRefName].sub("refs/heads/", "")
